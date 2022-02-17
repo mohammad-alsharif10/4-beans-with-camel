@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class GoodBeanExample extends RouteBuilder {
 
-   private final HelloBean helloBean;
 
-   public void configure() throws Exception {
-      from("direct:goodBean")
-              .bean(helloBean, "hello");
-   }
+    public void configure() throws Exception {
+        from("direct:goodBean")
+                .bean(HelloBean.class)
+                .to("log:reply");
+    }
 }

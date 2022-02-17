@@ -18,7 +18,7 @@ public class BadBeanExample extends RouteBuilder {
          // now create an instance of the bean
          HelloBean hello = new HelloBean();
          // and invoke it with the name parameter
-         String answer = hello.hello(name);
+         String answer = hello.hello(name,null);
 
          // store the reply from the bean on the OUT message
          exchange.getIn().setBody(answer);
